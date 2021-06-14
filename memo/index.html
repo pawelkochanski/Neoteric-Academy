@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/495513e678.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="./style.css" />
+    <title>Memo</title>
+  </head>
+  <body>
+    <h1 class="title">Memo</h1>
+    <div class="overlay-text visible">
+      <div class="welcome">Menu</div>
+      <div class="difficulty">
+        <button class="time-btn">Time Trial</button>
+        <button class="no-time-btn">Without Time Limit</button>
+      </div>
+    </div>
+    <div id="victory-text" class="overlay-text">
+      <div class="victory">VICTORY</div>
+    </div>
+    <div id="game-over-text" class="overlay-text">
+      <div class="game-over">GAME OVER</div>
+    </div>
+    <div class="game">
+      <div class="game-info-container">
+        <div class="game-info">
+          <div class="game-time">Time: <span id="time-remaining">0</span></div>
+        </div>
+        <div class="game-info">
+          <div class="game-time">
+            Flips: <span id="flips-remaining">0</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
