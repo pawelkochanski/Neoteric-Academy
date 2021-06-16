@@ -1,28 +1,26 @@
+const genElement = (type, classes) => {
+  const element = document.createElement(type);
+
+  classes.forEach((className) => {
+    element.classList.add(className);
+  });
+
+  return element;
+};
+
 const generateCard = (index) => {
   const container = document.querySelector(".game");
 
-  const cardDiv = document.createElement("div");
-  cardDiv.classList.add("card");
-  cardDiv.classList.add("lead");
+  const cardDiv = genElement("div", ["card", "lead"]);
 
-  const cardBack = document.createElement("div");
-  cardBack.classList.add("card-back");
-  cardBack.classList.add("card-face");
-
-  const cardBackIcon = document.createElement("i");
-  cardBackIcon.classList.add("fas");
-  cardBackIcon.classList.add("fa-times");
-
+  const cardBack = genElement("div", ["card-back", "card-face"]);
+  const cardBackIcon = genElement("i", ["fas", "fa-times"]);
   cardBack.appendChild(cardBackIcon);
 
   cardDiv.appendChild(cardBack);
 
-  const cardFront = document.createElement("div");
-  cardFront.classList.add("card-front");
-  cardFront.classList.add("card-face");
-
-  const cardFrontSpan = document.createElement("span");
-  cardFrontSpan.classList.add("card-value");
+  const cardFront = genElement("div", ["card-front", "card-face"]);
+  const cardFrontSpan = genElement("span", ["card-value"]);
   cardFrontSpan.innerText = index;
   cardFront.appendChild(cardFrontSpan);
 
@@ -376,9 +374,7 @@ const loadGame = () => {
   for (let i = 0; i < 16; i++) {
     const container = document.querySelector(".game");
 
-    const cardDiv = document.createElement("div");
-    cardDiv.classList.add("card");
-    cardDiv.classList.add("lead");
+    const cardDiv = genElement("div", ["card", "lead"]);
 
     if (visible[i] === 1) {
       cardDiv.classList.add("turned");
@@ -386,24 +382,14 @@ const loadGame = () => {
 
     cardDiv.style.order = orders[i];
 
-    const cardBack = document.createElement("div");
-    cardBack.classList.add("card-back");
-    cardBack.classList.add("card-face");
-
-    const cardBackIcon = document.createElement("i");
-    cardBackIcon.classList.add("fas");
-    cardBackIcon.classList.add("fa-times");
-
+    const cardBack = genElement("div", ["card-back", "card-face"]);
+    const cardBackIcon = genElement("i", ["fas", "fa-times"]);
     cardBack.appendChild(cardBackIcon);
 
     cardDiv.appendChild(cardBack);
 
-    const cardFront = document.createElement("div");
-    cardFront.classList.add("card-front");
-    cardFront.classList.add("card-face");
-
-    const cardFrontSpan = document.createElement("span");
-    cardFrontSpan.classList.add("card-value");
+    const cardFront = genElement("div", ["card-front", "card-face"]);
+    const cardFrontSpan = genElement("span", ["card-value"]);
     cardFrontSpan.innerText = numbers[i];
     cardFront.appendChild(cardFrontSpan);
 
